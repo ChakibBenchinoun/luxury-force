@@ -1,0 +1,25 @@
+{
+	"semi": false,
+	"singleQuote": true,
+	"useTabs": true,
+	"importOrder": [
+		"^(react/(.*)$)|^(react$)",
+		"^(next/(.*)$)|^(next)",
+		"<THIRD_PARTY_MODULES>",
+		"",
+		"^types$",
+		"^@/lib/(.*)$",
+		"^@/components/(.*)$",
+		"^@/assets/(.*)$",
+		"^@/styles/(.*)$",
+		"^@/app/(.*)$",
+		"^@/schemas",
+		"^[./]"
+	],
+	"importOrderTypeScriptVersion": "5.1.6",
+	"tailwindAttributes": ["cn", "tv"],
+	"plugins": [
+		"@ianvs/prettier-plugin-sort-imports",
+		"prettier-plugin-tailwindcss"
+	]
+}

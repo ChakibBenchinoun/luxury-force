@@ -1,113 +1,258 @@
-import Image from "next/image";
+import Image from 'next/image'
+import MercedesIn from 'assets/images/mercedes-g-class.jpg'
+import {
+	Car,
+	Heart,
+	InboxIcon,
+	Search,
+	Smile,
+	TrashIcon,
+	UsersIcon,
+} from 'lucide-react'
+
+import { cn } from '@/lib/utils'
+import { Container } from '@/components/container'
+import { TextLoop } from '@/components/loop-text'
+import { Button } from '@/components/ui/button'
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from '@/components/ui/select'
+import { carsData, carTypes } from '@/assets/data'
+
+const features = [
+	{
+		name: 'Variety of Car Brands',
+		description:
+			'Lorem ipsum dolor sit amet, consectadipiscing elit. Aenean commodo ligula eget dolor.',
+		icon: Car,
+	},
+	{
+		name: 'Best Rate Guarantee',
+		description:
+			'Lorem ipsum dolor sit amet, consectadipiscing elit. Aenean commodo ligula eget dolor.',
+		icon: Smile,
+	},
+	{
+		name: 'Awesome Customer Support',
+		description:
+			'Lorem ipsum dolor sit amet, consectadipiscing elit. Aenean commodo ligula eget dolor.',
+		icon: Heart,
+	},
+]
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	const carsLengthIsInteger = (withThisNumber: number) =>
+		Number.isInteger((carsData.length + withThisNumber) / 3)
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+	return (
+		<main>
+			{/* Hero Section */}
+			<div className="relative flex h-[60vw] items-center overflow-hidden border-b border-white/40 bg-black/50">
+				<Image
+					src={MercedesIn}
+					alt=""
+					className="absolute top-0 -z-10 h-full w-full object-cover object-top blur-[00.5px]"
+				/>
+				<div className="z-10 mx-auto w-full max-w-6xl py-32 sm:py-48 lg:py-56">
+					<div className="flex justify-center">
+						<p className="leading-8 text-amber-200/50">
+							From as low as $10 per day with limited time offer discounts
+						</p>
+					</div>
+					<div className="mt-2 w-full text-center">
+						<TextLoop
+							className="text-4xl font-semibold uppercase sm:text-6xl"
+							texts={[
+								'Drive the dream not just the destination',
+								'Find the best car that suits your needs',
+							]}
+						/>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+						<div className="mt-10 flex items-center justify-center gap-x-6">
+							<Select>
+								<SelectTrigger className="max-w-xs">
+									<SelectValue placeholder="Select a Brand" />
+								</SelectTrigger>
+								<SelectContent>
+									{carsData.map((item) => (
+										<SelectItem key={item.brand} value={item.brand}>
+											{item.brand}
+										</SelectItem>
+									))}
+								</SelectContent>
+							</Select>
+							<Select>
+								<SelectTrigger className="max-w-xs">
+									<SelectValue placeholder="Select a Type" />
+								</SelectTrigger>
+								<SelectContent>
+									{carTypes.map((item) => (
+										<SelectItem key={item.type} value={item.type}>
+											{item.type}
+										</SelectItem>
+									))}
+								</SelectContent>
+							</Select>
+							<Select>
+								<SelectTrigger className="max-w-xs">
+									<SelectValue placeholder="Sort By" />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value="apple">Price Low to High</SelectItem>
+									<SelectItem value="banana">Price High to Low</SelectItem>
+									<SelectItem value="blueberry">Sort By Popularity</SelectItem>
+								</SelectContent>
+							</Select>
+							<Button className="w-full max-w-sm">
+								<Search className="mr-2 h-4 w-4" />
+								Search
+							</Button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/* Cars Section */}
+			<Container className="py-28">
+				{/* Find a car by Brand  */}
+				<div>
+					<div className="mx-auto max-w-2xl text-center">
+						<h1 className="text-3xl font-bold uppercase tracking-tight sm:text-4xl">
+							First Class Car Rental
+						</h1>
+						<p className="mt-2 text-lg">
+							We offer professional car rental in our range of high-end vehicles
+						</p>
+					</div>
+					<div
+						className={cn(
+							'mx-auto mt-16 grid w-full max-w-7xl justify-items-center gap-10 xl:gap-x-0',
+							carsLengthIsInteger(0) ? 'grid-cols-3' : 'grid-cols-6',
+						)}
+					>
+						{carsData.map((item, i) => (
+							<div
+								key={item.brand}
+								className={cn(
+									carsLengthIsInteger(0) ? 'col-span-1' : 'col-span-2',
+									carsLengthIsInteger(-2) && i === carsData.length - 2
+										? 'col-start-2'
+										: carsLengthIsInteger(-1) && i === carsData.length - 1
+										? 'col-start-3'
+										: null,
+									'relative flex aspect-square max-w-sm justify-center',
+								)}
+							>
+								<Image
+									src={item.carDefaultImage}
+									alt={item.brand}
+									className="-z-10 rounded-md object-cover"
+								/>
+								<div className="absolute inset-0 z-10 flex h-full w-full items-end">
+									<div className="mb-3 ml-4 w-full text-2xl font-bold tracking-wide">
+										{item.brand}
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+				{/* Find a car by Type  */}
+				<div className="mt-28">
+					<div className="mx-auto max-w-2xl text-center">
+						<h1 className="text-3xl font-bold uppercase tracking-tight sm:text-4xl">
+							Find Car by Type
+						</h1>
+						<p className="mt-2 text-lg">
+							We offer professional car rental in our range of high-end vehicles
+						</p>
+					</div>
+					<div className="mx-auto mt-16 grid w-full max-w-7xl grid-cols-3 justify-items-center gap-10">
+						{carTypes.map((item) => (
+							<div
+								key={item.type}
+								className="relative flex aspect-square max-w-sm justify-center"
+							>
+								<Image
+									src={item.image}
+									alt={`${item.type}-image`}
+									className="-z-10 rounded-md object-cover"
+								/>
+								<div className="absolute inset-0 z-10 flex h-full w-full items-end">
+									<div className="mb-3 ml-4 w-full text-2xl font-bold tracking-wide">
+										{item.type}
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</Container>
+			{/* CTA Section  */}
+			<div className="py-24 sm:py-32">
+				<div className="relative overflow-hidden border-t border-white/40 bg-black/30 py-48 text-center shadow-2xl">
+					<video
+						autoPlay
+						muted
+						loop
+						className="absolute inset-0 -z-10 h-full w-full object-cover"
+					>
+						<source src="/cta-video.mp4" type="video/mp4" />
+					</video>
+					<h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+						Our Fleet, Your Fleet
+					</h2>
+					<p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
+						We know the difference is in the details and that’s why our car
+						rental services, in the tourism and business industry, stand out for
+						their quality and good taste, to offer you an unique experience
+					</p>
+					<Button
+						variant="ghost"
+						asChild
+						className="mt-10 text-2xl font-medium text-white"
+					>
+						<a href="tel:+213553324323">Call Now +213-553-324-323</a>
+					</Button>
+				</div>
+				<Container className="border-y border-white/40 bg-gray-700 py-20">
+					<div className="mx-auto max-w-7xl">
+						<div className="mx-auto max-w-2xl text-center">
+							<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+								Why Choose Us
+							</h2>
+							<p className="mt-4 text-lg text-gray-300">
+								Explore our first class limousine & car rental services
+							</p>
+						</div>
+						<div className="mx-auto mt-10 max-w-2xl sm:mt-14 lg:mt-16 lg:max-w-none">
+							<dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+								{features.map((feature) => (
+									<div key={feature.name} className="flex flex-col">
+										<dt className="text-center">
+											<div className="mx-auto mb-3 flex items-center justify-center">
+												<feature.icon
+													className="h-14 w-14 text-amber-400"
+													aria-hidden="true"
+												/>
+											</div>
+											<span className="text-xl font-semibold text-white">
+												{feature.name}
+											</span>
+										</dt>
+										<dd className="mt-3 flex flex-auto flex-col text-center text-gray-300">
+											<p className="flex-auto">{feature.description}</p>
+										</dd>
+									</div>
+								))}
+							</dl>
+						</div>
+					</div>
+				</Container>
+			</div>
+		</main>
+	)
 }
