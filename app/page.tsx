@@ -51,30 +51,29 @@ export default function Home() {
 	return (
 		<main>
 			{/* Hero Section */}
-			<div className="relative flex h-[60vw] items-center overflow-hidden border-b border-white/40 bg-black/50">
+			<div className="relative flex items-center overflow-hidden border-b border-white/40 bg-black/50">
 				<Image
 					src={MercedesIn}
 					alt=""
 					className="absolute top-0 -z-10 h-full w-full object-cover object-top blur-[00.5px]"
 				/>
-				<div className="z-10 mx-auto w-full max-w-6xl py-32 sm:py-48 lg:py-56">
-					<div className="flex justify-center">
-						<p className="leading-8 text-amber-200/50">
+				<Container className="z-10 mx-auto w-full max-w-6xl py-32 sm:py-48 lg:py-96">
+					<div className="flex justify-center text-center">
+						<p className="text-xs text-amber-200/60 sm:text-base">
 							From as low as $10 per day with limited time offer discounts
 						</p>
 					</div>
-					<div className="mt-2 w-full text-center">
+					<div className="mt-3 w-full text-center sm:mt-2 xl:mt-3">
 						<TextLoop
-							className="text-4xl font-semibold uppercase sm:text-6xl"
+							className=""
 							texts={[
 								'Drive the dream not just the destination',
 								'Find the best car that suits your needs',
 							]}
 						/>
-
-						<div className="mt-10 flex items-center justify-center gap-x-6">
+						<div className="mt-16 grid grid-flow-row gap-y-4 lg:mt-8 lg:flex lg:items-center lg:justify-center lg:gap-x-8 xl:mt-10 xl:gap-x-10">
 							<Select>
-								<SelectTrigger className="max-w-xs">
+								<SelectTrigger className="mx-auto w-full max-w-lg">
 									<SelectValue placeholder="Select a Brand" />
 								</SelectTrigger>
 								<SelectContent>
@@ -86,7 +85,7 @@ export default function Home() {
 								</SelectContent>
 							</Select>
 							<Select>
-								<SelectTrigger className="max-w-xs">
+								<SelectTrigger className="mx-auto w-full max-w-lg">
 									<SelectValue placeholder="Select a Type" />
 								</SelectTrigger>
 								<SelectContent>
@@ -98,7 +97,7 @@ export default function Home() {
 								</SelectContent>
 							</Select>
 							<Select>
-								<SelectTrigger className="max-w-xs">
+								<SelectTrigger className="mx-auto w-full max-w-lg">
 									<SelectValue placeholder="Sort By" />
 								</SelectTrigger>
 								<SelectContent>
@@ -107,13 +106,13 @@ export default function Home() {
 									<SelectItem value="blueberry">Sort By Popularity</SelectItem>
 								</SelectContent>
 							</Select>
-							<Button className="w-full max-w-sm">
+							<Button className="mx-auto w-full max-w-lg">
 								<Search className="mr-2 h-4 w-4" />
 								Search
 							</Button>
 						</div>
 					</div>
-				</div>
+				</Container>
 			</div>
 			{/* Cars Section */}
 			<Container className="py-28">
@@ -129,19 +128,19 @@ export default function Home() {
 					</div>
 					<div
 						className={cn(
-							'mx-auto mt-16 grid w-full max-w-7xl justify-items-center gap-10 xl:gap-x-0',
-							carsLengthIsInteger(0) ? 'grid-cols-3' : 'grid-cols-6',
+							'mx-auto mt-16 grid w-full max-w-7xl grid-cols-2 justify-items-center gap-10 xl:gap-x-0',
+							carsLengthIsInteger(0) ? 'lg:grid-cols-3' : 'lg:grid-cols-6',
 						)}
 					>
 						{carsData.map((item, i) => (
 							<div
 								key={item.brand}
 								className={cn(
-									carsLengthIsInteger(0) ? 'col-span-1' : 'col-span-2',
+									carsLengthIsInteger(0) ? 'lg:col-span-1' : 'lg:col-span-2',
 									carsLengthIsInteger(-2) && i === carsData.length - 2
-										? 'col-start-2'
+										? 'lg:col-start-2'
 										: carsLengthIsInteger(-1) && i === carsData.length - 1
-										? 'col-start-3'
+										? 'lg:col-start-3'
 										: null,
 									'relative flex aspect-square max-w-sm justify-center',
 								)}
@@ -170,7 +169,7 @@ export default function Home() {
 							We offer professional car rental in our range of high-end vehicles
 						</p>
 					</div>
-					<div className="mx-auto mt-16 grid w-full max-w-7xl grid-cols-3 justify-items-center gap-10">
+					<div className="mx-auto mt-16 grid w-full max-w-7xl justify-items-center gap-10 lg:grid-cols-3">
 						{carTypes.map((item) => (
 							<div
 								key={item.type}
@@ -192,7 +191,7 @@ export default function Home() {
 				</div>
 			</Container>
 			{/* CTA Section  */}
-			<div className="py-24 sm:py-32">
+			<div className="pt-24 sm:pt-32">
 				<div className="relative overflow-hidden border-t border-white/40 bg-black/30 py-48 text-center shadow-2xl">
 					<video
 						autoPlay
@@ -205,7 +204,7 @@ export default function Home() {
 					<h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
 						Our Fleet, Your Fleet
 					</h2>
-					<p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
+					<p className="mx-auto mt-6 hidden max-w-xl text-lg leading-8 text-gray-300 lg:block">
 						We know the difference is in the details and that’s why our car
 						rental services, in the tourism and business industry, stand out for
 						their quality and good taste, to offer you an unique experience
@@ -213,7 +212,7 @@ export default function Home() {
 					<Button
 						variant="ghost"
 						asChild
-						className="mt-10 text-2xl font-medium text-white"
+						className="mt-3 text-2xl font-medium text-white lg:mt-10"
 					>
 						<a href="tel:+213553324323">Call Now +213-553-324-323</a>
 					</Button>
@@ -228,7 +227,7 @@ export default function Home() {
 								Explore our first class limousine & car rental services
 							</p>
 						</div>
-						<div className="mx-auto mt-10 max-w-2xl sm:mt-14 lg:mt-16 lg:max-w-none">
+						<div className="mx-auto mt-10 flex max-w-2xl justify-center sm:mt-14 lg:mt-16 lg:max-w-none">
 							<dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
 								{features.map((feature) => (
 									<div key={feature.name} className="flex flex-col">

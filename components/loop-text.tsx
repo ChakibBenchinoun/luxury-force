@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { cn } from '@/lib/utils'
-
 const variants = {
 	enter: () => {
 		return {
@@ -25,13 +23,7 @@ const variants = {
 	},
 }
 
-export function TextLoop({
-	texts,
-	className,
-}: {
-	texts: string[]
-	className?: string
-}) {
+export function TextLoop({ texts }: { texts: string[]; className?: string }) {
 	const [index, setIndex] = useState(0)
 
 	useEffect(() => {
@@ -45,13 +37,10 @@ export function TextLoop({
 	}, [index, setIndex])
 
 	return (
-		<div className="relative inline-block h-[120px] w-full">
+		<div className="relative inline-block h-14 w-full max-w-lg lg:h-16 lg:max-w-2xl xl:h-20 xl:max-w-4xl">
 			<AnimatePresence>
 				<motion.div
-					className={cn(
-						'absolute relative inset-0 h-fit w-full text-amber-100/50',
-						className,
-					)}
+					className="absolute inset-0 h-fit w-full text-3xl font-semibold uppercase text-amber-200 lg:text-4xl xl:text-5xl"
 					variants={variants}
 					key={index}
 					initial="enter"
@@ -62,9 +51,6 @@ export function TextLoop({
 						opacity: { duration: 0.5 },
 					}}
 				>
-					<span className="-z-1 absolute left-0.5 top-0.5 text-amber-200/90">
-						{texts[index]}
-					</span>
 					{texts[index]}
 				</motion.div>
 			</AnimatePresence>
