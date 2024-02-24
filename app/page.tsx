@@ -1,14 +1,6 @@
 import Image from 'next/image'
 import MercedesIn from 'assets/images/mercedes-g-class.jpg'
-import {
-	Car,
-	Heart,
-	InboxIcon,
-	Search,
-	Smile,
-	TrashIcon,
-	UsersIcon,
-} from 'lucide-react'
+import { Car, Heart, Search, Smile } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Container } from '@/components/container'
@@ -148,7 +140,7 @@ export default function Home() {
 								<Image
 									src={item.carDefaultImage}
 									alt={item.brand}
-									className="-z-10 rounded-md object-cover"
+									className="-z-10 h-full w-full rounded-md object-cover"
 								/>
 								<div className="absolute inset-0 z-10 flex h-full w-full items-end">
 									<div className="mb-3 ml-4 w-full text-2xl font-bold tracking-wide">
