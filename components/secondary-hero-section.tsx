@@ -13,7 +13,7 @@ export default function HeroSection({
 }) {
 	const pathname = usePathname()
 	return (
-		<div className="relative flex h-[50vw] items-center overflow-hidden bg-black/20 py-48 shadow-2xl shadow-yellow-500 md:items-end md:py-0 md:pt-28">
+		<div className="relative mx-auto flex h-[50vw] w-full items-center overflow-hidden bg-black/20 py-48 shadow-2xl shadow-yellow-500 md:items-end md:py-0 md:pt-28">
 			<Image
 				src={image}
 				alt=""

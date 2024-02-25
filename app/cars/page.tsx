@@ -3,6 +3,7 @@ import { Clock, FileQuestion, Phone, Search } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Cart } from '@/components/cars-cart'
+import { Container } from '@/components/container'
 import HeroSection from '@/components/secondary-hero-section'
 import { Button } from '@/components/ui/button'
 import {
@@ -90,7 +91,7 @@ export default function Cars() {
 		<main className="relative z-20 bg-black">
 			{/* hero section  */}
 			<HeroSection image={HeroImage} />
-			<div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
+			<Container className=" pb-24 pt-16">
 				{/* Cars Filter */}
 				<div className="mt-16 grid grid-flow-row gap-y-4 rounded-md bg-white/20 px-4  py-6 sm:p-6 lg:mt-8 lg:flex lg:items-center lg:justify-center lg:gap-x-8 xl:mt-10 xl:gap-x-10">
 					<Select>
@@ -173,7 +174,7 @@ export default function Cars() {
 						</div>
 					</section>
 				</div>
-			</div>
+			</Container>
 		</main>
 	)
 }

@@ -1,5 +1,6 @@
 import { Clock, MapPin, Phone } from 'lucide-react'
 
+import { Container } from '../container'
 import { Logo } from '../icons/logo'
 
 const navigation = {
@@ -74,7 +75,7 @@ export function Footer() {
 			<h2 id="footer-heading" className="sr-only">
 				Footer
 			</h2>
-			<div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+			<Container className="pb-8 pt-16 sm:pt-24 lg:pt-32">
 				<div className="lg:grid lg:grid-cols-3 lg:gap-10">
 					<div>
 						<h2 className="mb-3 text-lg font-extrabold lg:mb-5">About Us</h2>
@@ -144,7 +145,7 @@ export function Footer() {
 						&copy; 2020 Your Company, Inc. All rights reserved.
 					</p>
 				</div>
-			</div>
+			</Container>
 		</footer>
 	)
 }

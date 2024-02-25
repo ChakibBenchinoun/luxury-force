@@ -49,7 +49,7 @@ export default function Home() {
 					alt=""
 					className="absolute top-0 -z-10 h-full w-full object-cover object-top blur-[00.5px]"
 				/>
-				<Container className="z-10 mx-auto w-full max-w-6xl py-32 sm:py-48 lg:py-96">
+				<div className="z-10 mx-auto w-full max-w-7xl py-32 sm:py-40 lg:py-80">
 					<div className="flex justify-center text-center">
 						<p className="text-xs text-amber-200/60 sm:text-base">
 							From as low as $10 per day with limited time offer discounts
@@ -104,10 +104,10 @@ export default function Home() {
 							</Button>
 						</div>
 					</div>
-				</Container>
+				</div>
 			</div>
 			{/* Cars Section */}
-			<Container className="py-28">
+			<Container className="pb-28 pt-16">
 				{/* Find a car by Brand  */}
 				<div>
 					<div className="mx-auto max-w-2xl text-center">
@@ -120,7 +120,7 @@ export default function Home() {
 					</div>
 					<div
 						className={cn(
-							'mx-auto mt-16 grid w-full max-w-7xl justify-items-center gap-10 xl:gap-x-0',
+							'mx-auto mt-16 grid w-full max-w-7xl justify-items-center gap-10 sm:grid-cols-2',
 							carsLengthIsInteger(0) ? 'lg:grid-cols-3' : 'lg:grid-cols-6',
 						)}
 					>
@@ -209,8 +209,8 @@ export default function Home() {
 						<a href="tel:+213553324323">Call Now +213-553-324-323</a>
 					</Button>
 				</div>
-				<Container className="border-y border-white/40 bg-gray-700 py-20">
-					<div className="mx-auto max-w-7xl">
+				<div className="border-y border-white/40 bg-gray-700 py-20">
+					<Container className="mx-auto max-w-7xl">
 						<div className="mx-auto max-w-2xl text-center">
 							<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
 								Why Choose Us
@@ -241,8 +241,8 @@ export default function Home() {
 								))}
 							</dl>
 						</div>
-					</div>
-				</Container>
+					</Container>
+				</div>
 			</div>
 		</main>
 	)

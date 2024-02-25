@@ -19,19 +19,19 @@ export function Cart({
 	}
 }) {
 	return (
-		<div className="flex">
+		<div className="sm:flex">
 			<div className="flex-shrink-0">
 				<Image
 					src={image}
 					alt={`${name}-alt`}
-					className="h-24 w-24 rounded-md object-cover object-center sm:h-60 sm:w-60"
+					className="aspect-video rounded-md object-cover object-center sm:aspect-auto sm:h-60 sm:w-60"
 				/>
 			</div>
-			<div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-				<div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
+			<div className="mt-5 flex flex-1 flex-col justify-between sm:ml-6 sm:mt-0">
+				<div className="relative sm:grid sm:grid-cols-2 sm:gap-x-6">
 					<div>
 						<div className="flex justify-between">
-							<h3 className="text-2xl">
+							<h3 className="whitespace-nowrap text-xl md:text-2xl">
 								<a
 									href="#"
 									className="font-bold text-amber-100 hover:text-amber-200"
@@ -50,7 +50,7 @@ export function Cart({
 									/>
 								))}
 							</div>
-							<p className="ml-2 border-l border-gray-500 pl-3 text-gray-400">
+							<p className="ml-2 whitespace-nowrap border-l border-gray-500 pl-3 text-gray-400">
 								{reviews} reviews
 							</p>
 						</div>
@@ -68,13 +68,15 @@ export function Cart({
 						</div>
 					</div>
 
-					<div className="mt-4 sm:mt-0 sm:pr-9">
-						<div className="absolute right-0 top-0">
+					<div className="hidden pr-9 sm:block">
+						<div className="right-0 top-0 sm:absolute">
 							<div className="flex">
-								<span className="mr-1 text-3xl font-bold">{price}</span>
+								<span className="mr-1 text-xl font-bold md:text-3xl">
+									{price}
+								</span>
 								<span className="mt-1 text-xs text-gray-400">DA</span>
 							</div>
-							<div className="mt-1 flex justify-end">
+							<div className=" mt-1 flex justify-end">
 								<span className="text-xs text-gray-400">Per Day</span>
 							</div>
 						</div>
@@ -88,6 +90,16 @@ export function Cart({
 							{item}
 						</span>
 					))}
+				</div>
+
+				<div className="mt-5 flex items-center justify-between sm:hidden">
+					<div className="flex">
+						<span className="mr-1 text-xl font-bold md:text-3xl">{price}</span>
+						<span className="mt-1 text-xs text-gray-400">DA</span>
+					</div>
+					<div className=" mt-1 flex justify-end">
+						<span className="text-xs text-gray-400">Per Day</span>
+					</div>
 				</div>
 			</div>
 		</div>

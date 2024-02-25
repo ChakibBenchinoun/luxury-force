@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { CiMenuFries } from 'react-icons/ci'
 
 import { cn } from '@/lib/utils'
 import { Container } from '../container'
@@ -17,8 +16,8 @@ export function Navigation() {
 	return (
 		<header className="sticky inset-x-0 top-0 z-50 lg:fixed">
 			<nav aria-label="Global" className="relative">
-				<div className="absolute -z-50 h-full w-full bg-black/40 backdrop-blur-md" />
-				<Container className="flex w-full items-center justify-between border-b border-white/30 py-10">
+				<div className="absolute -z-50 h-full w-full border-b border-white/30 bg-black/40 backdrop-blur-md" />
+				<Container className="flex w-full items-center justify-between py-10">
 					<div className="flex items-center gap-20">
 						<span className="whitespace-nowrap text-xl font-light tracking-wide text-yellow-200 xl:text-2xl">
 							LUXURY FORCE
