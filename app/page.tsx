@@ -43,7 +43,8 @@ export default function Home() {
 	return (
 		<main>
 			{/* Hero Section */}
-			<div className="relative flex items-center overflow-hidden border-b border-white/40 bg-black/50">
+			<div className="relative flex items-center overflow-hidden border-b border-white/40">
+				<div className="absolute inset-0 -z-0 bg-black/40 backdrop-blur-sm" />
 				<Image
 					src={MercedesIn}
 					alt=""

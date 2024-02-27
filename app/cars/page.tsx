@@ -1,5 +1,5 @@
 import HeroImage from 'assets/images/bmw-m4.jpg'
-import { Clock, FileQuestion, Phone, Search } from 'lucide-react'
+import { Clock, Phone, Search } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Cart } from '@/components/cars-cart'
@@ -91,9 +91,12 @@ export default function Cars() {
 		<main className="relative z-20 bg-black">
 			{/* hero section  */}
 			<HeroSection image={HeroImage} />
-			<Container className=" pb-24 pt-16">
+			<Container className="pb-24 pt-20 lg:pt-40">
+				<h1 className="mx-auto max-w-xl text-center text-2xl font-bold uppercase sm:text-3xl">
+					Drive your adventure with our rental cars
+				</h1>
 				{/* Cars Filter */}
-				<div className="mt-16 grid grid-flow-row gap-y-4 rounded-md bg-white/20 px-4  py-6 sm:p-6 lg:mt-8 lg:flex lg:items-center lg:justify-center lg:gap-x-8 xl:mt-10 xl:gap-x-10">
+				<div className="mt-8 grid grid-flow-row gap-y-4 rounded-md bg-white/20 px-4 py-6 sm:mt-14 sm:p-6 lg:flex lg:items-center lg:justify-center lg:gap-x-8 xl:gap-x-10">
 					<Select>
 						<SelectTrigger className="mx-auto w-full max-w-lg">
 							<SelectValue placeholder="Select a Brand" />

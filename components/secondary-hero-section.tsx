@@ -12,23 +12,30 @@ export default function HeroSection({
 	image: StaticImageData | string
 }) {
 	const pathname = usePathname()
+	console.log(pathname)
+
 	return (
-		<div className="relative mx-auto flex h-[50vw] w-full items-center overflow-hidden bg-black/20 py-48 shadow-2xl shadow-yellow-500 md:items-end md:py-0 md:pt-28">
+		<div className="relative mx-auto flex w-full items-center overflow-hidden shadow-2xl shadow-yellow-500 md:items-end lg:pt-28">
+			<div className="absolute inset-0 -z-0 bg-black/40 backdrop-blur-sm" />
 			<Image
 				src={image}
 				alt=""
 				className="absolute top-0 -z-10 h-full w-full object-cover object-center"
 			/>
-			<Container className="py-16">
+			<Container className="z-10 mx-auto py-32 lg:py-64">
 				<Link
 					href="/"
-					className="mr-1 text-2xl text-white transition hover:text-yellow-400 sm:text-3xl lg:text-4xl"
+					className="mr-1 text-2xl text-white transition hover:text-yellow-400 lg:text-3xl"
 				>
 					Home
 				</Link>{' '}
-				<span className="text-3xl text-white lg:text-4xl">||</span>{' '}
-				<span className="ml-1 border-b-4 border-yellow-400 pb-1 text-3xl font-bold capitalize text-white lg:text-4xl">
-					{pathname.replace('/', '')}
+				<span className="text-3xl text-white lg:text-4xl">|</span>{' '}
+				<span className="ml-1 border-b-4 border-yellow-400 pb-1 text-2xl font-bold capitalize text-white lg:text-3xl">
+					{pathname === '/about'
+						? `${pathname.replace('/', '')} Us`
+						: pathname === '/cars'
+						? `Our ${pathname.replace('/', '')}`
+						: pathname.replace('/', '')}
 				</span>
 			</Container>
 		</div>

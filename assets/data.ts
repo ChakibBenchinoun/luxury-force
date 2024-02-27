@@ -1,14 +1,20 @@
+import AudiLogo from './images/Audi_logo.svg.png'
 import AudiA5 from './images/audi-a5.jpg'
+import BmwLogo from './images/BMW-logo.png'
 import BmwM4 from './images/bmw-m4.jpg'
 import Coupe from './images/coupe.jpg'
+import LandRoverLogo from './images/land-rover-logo.png'
+import MercedesLogo from './images/Mercedes-Benz_Logo.png'
 import MercedesCLS from './images/mercedes-cls.jpg'
 import MercedesGClass from './images/mercedes-g-class2.jpg'
+import PorscheLogo from './images/Porsche_logo.png'
 import Porche718 from './images/porsche-718.jpg'
 import PorchePanamera from './images/porsche-panamera.jpg'
 import RangeRover from './images/range-rover.jpg'
 import Sedan from './images/sedan.jpg'
 import SUV from './images/suv.jpg'
 import Volkswagen7 from './images/volkswagen-7.jpg'
+import VolkswagenLogo from './images/Volkswagen-logo.png'
 
 type CarTypes = 'Coupe' | 'Sedan' | 'SUV'
 
@@ -16,6 +22,7 @@ export const carsData = [
 	{
 		brand: 'Audi',
 		carDefaultImage: AudiA5,
+		logoImage: AudiLogo,
 		cars: [
 			{
 				name: 'Audi A5',
@@ -43,6 +50,7 @@ export const carsData = [
 	{
 		brand: 'BMW',
 		carDefaultImage: BmwM4,
+		logoImage: BmwLogo,
 		cars: [
 			{
 				name: 'BMW M4',
@@ -70,6 +78,7 @@ export const carsData = [
 	{
 		brand: 'Mercedes Benz',
 		carDefaultImage: MercedesGClass,
+		logoImage: MercedesLogo,
 		cars: [
 			{
 				name: 'Mercedes CLS',
@@ -118,6 +127,7 @@ export const carsData = [
 	{
 		brand: 'Porsche',
 		carDefaultImage: Porche718,
+		logoImage: PorscheLogo,
 		cars: [
 			{
 				name: 'Porche 718',
@@ -166,6 +176,7 @@ export const carsData = [
 	{
 		brand: 'Land Rover',
 		carDefaultImage: RangeRover,
+		logoImage: LandRoverLogo,
 		cars: [
 			{
 				name: 'RANGE ROVER',
@@ -193,6 +204,7 @@ export const carsData = [
 	{
 		brand: 'Volkswagen',
 		carDefaultImage: Volkswagen7,
+		logoImage: VolkswagenLogo,
 		cars: [
 			{
 				name: 'Golf 7',
