@@ -15,7 +15,7 @@ export default function HeroSection({
 	console.log(pathname)
 
 	return (
-		<div className="relative mx-auto flex w-full items-center overflow-hidden shadow-2xl shadow-yellow-500 md:items-end lg:pt-28">
+		<div className="relative mx-auto flex w-full items-center overflow-hidden border-b border-white/40 md:items-end lg:pt-28">
 			<div className="absolute inset-0 -z-0 bg-black/40 backdrop-blur-sm" />
 			<Image
 				src={image}
@@ -33,7 +33,7 @@ export default function HeroSection({
 				<span className="ml-1 border-b-4 border-yellow-400 pb-1 text-2xl font-bold capitalize text-white lg:text-3xl">
 					{pathname === '/about'
 						? `${pathname.replace('/', '')} Us`
-						: pathname === '/cars'
+						: pathname === '/cars' || 'services'
 						? `Our ${pathname.replace('/', '')}`
 						: pathname.replace('/', '')}
 				</span>
