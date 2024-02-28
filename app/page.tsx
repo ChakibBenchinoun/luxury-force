@@ -50,7 +50,7 @@ export default function Home() {
 					alt=""
 					className="absolute top-0 -z-10 h-full w-full object-cover object-top blur-[00.5px]"
 				/>
-				<div className="z-10 mx-auto w-full max-w-7xl py-32 sm:py-40 lg:py-80">
+				<Container className="z-10 w-full py-32 sm:py-40 lg:py-80">
 					<div className="flex justify-center text-center">
 						<p className="text-xs text-amber-200/60 sm:text-base">
 							From as low as $10 per day with limited time offer discounts
@@ -64,7 +64,7 @@ export default function Home() {
 								'Find the best car that suits your needs',
 							]}
 						/>
-						<div className="mt-16 grid grid-flow-row gap-y-4 lg:mt-8 lg:flex lg:items-center lg:justify-center lg:gap-x-8 xl:mt-10 xl:gap-x-10">
+						<div className="mx-auto mt-16 grid max-w-5xl grid-flow-row gap-y-4 lg:mt-8 lg:flex lg:items-center lg:justify-center lg:gap-x-8 xl:mt-10 xl:gap-x-10">
 							<Select>
 								<SelectTrigger className="mx-auto w-full max-w-lg">
 									<SelectValue placeholder="Select a Brand" />
@@ -105,7 +105,7 @@ export default function Home() {
 							</Button>
 						</div>
 					</div>
-				</div>
+				</Container>
 			</div>
 			{/* Cars Section */}
 			<Container className="pb-28 pt-16">

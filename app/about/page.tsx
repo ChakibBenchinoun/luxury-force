@@ -209,7 +209,7 @@ export default function About() {
 						className="mt-3 w-full text-left text-sm md:mt-6 md:text-base"
 					>
 						{faq.map((question) => (
-							<AccordionItem value={question.quetion}>
+							<AccordionItem value={question.quetion} key={question.quetion}>
 								<AccordionTrigger>{question.quetion}</AccordionTrigger>
 								<AccordionContent>{question.answer}</AccordionContent>
 							</AccordionItem>
