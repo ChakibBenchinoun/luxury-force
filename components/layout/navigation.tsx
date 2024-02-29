@@ -8,8 +8,8 @@ export const navigation = [
 	{ name: 'Home', path: '/' },
 	{ name: 'Our Cars', path: '/cars' },
 	{ name: 'About Us', path: '/about' },
-	{ name: 'Our Services', path: 'services' },
-	{ name: 'Contact Us', path: 'contact' },
+	{ name: 'Our Services', path: '/services' },
+	{ name: 'Contact Us', path: '/contact' },
 ]
 
 export function Navigation() {
