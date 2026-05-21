@@ -131,7 +131,7 @@ const framerSidebarPanel = {
 	initial: { x: '100%' },
 	animate: { x: 0 },
 	exit: { x: '100%' },
-	transition: { duration: 0.3, ease: [0.075, 0.82, 0.165, 1] },
+	transition: { duration: 0.3, ease: [0.075, 0.82, 0.165, 1] as const },
 }
 
 const framerText = (delay: number) => {

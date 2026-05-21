@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from 'next/image'
-import { BaggageClaim, Check, User } from 'lucide-react'
-import { GiCarDoor, GiGearStickPattern } from 'react-icons/gi'
+import { BaggageClaim, Check, User, Car, Cog } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Star } from '@/components/icons/star'
@@ -112,9 +111,9 @@ function CheckFeat({ type, className }: { type: string; className?: string }) {
 	} else if (type === 'Luggages') {
 		return <BaggageClaim className={className} />
 	} else if (type === 'GearBox') {
-		return <GiGearStickPattern className={className} />
+		return <Cog className={className} />
 	} else if (type === 'Doors') {
-		return <GiCarDoor className={className} />
+		return <Car className={className} />
 	}
 }
 
